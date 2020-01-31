@@ -95,13 +95,13 @@ deleteForm.addEventListener("submit", event => {
 
 const renderBook = Category => `
 <tr>
-<td>${Category.name}</td> <td>${Category.limit}</td>
+<td class="bc"><p class="bc">${Category.name}</p></td> <td>${Category.limit}</td> <td><button class="button" class="btn btn-success" id="delete" type="submit" style="width: 100%;">Удалить</button></td>
 </tr>
 `;
 const getAllcategories = function() {
   createRequest({ path: "api/v001/category?userid="+userId, method: "GET" })
     .then(response => {
-      document.querySelector("#Categories").innerHTML ='<tr><th>Категория</th><th>Лимит</th></tr>' + response
+      document.querySelector("#main_table").innerHTML ='<tr><th>Категория</th><th>Лимит</th><th></th></tr>' + response
           .map(renderBook)
         .join("");
       console.log("Результат запроса ", response);
@@ -147,50 +147,31 @@ const bindAddFormListener = () => {
     addExpenses.addEventListener('click', addExpense);
 }
 
+const bindDeleteListener = () => {
+    const deleteForm = document.querySelector("#delete");
+    deleteForm.addEventListener("submit", event => {
+        event.preventDefault();
 
-/*
-const getOneBookForm = document.querySelector("#get-one-book");
-getOneBookForm.addEventListener("submit", event => {
-  event.preventDefault();
+        const data = getFieldData(event.target);
+        console.log("main", "data", data);
 
-  const data = getFieldData(event.target);
+        toggleClass(".delete", "loading");
 
-  toggleClass(".one-book", "loading");
-
-  createRequest({ path: `/api/v001/books/${data.bookId}`, method: "GET" })
-    .then(response => {
-      document.querySelector("#one-book").innerHTML = renderBook(response);
-      toggleClass(".one-book", "loading");
-      console.log("Данные книги получены", response);
-    })
-    .catch(() => {
-      document.querySelector("#one-book").innerHTML =
-        "Книги с таким id не нашлось :(";
-      toggleClass(".one-book", "loading");
-      console.log("Не нашли книгу с id=", data.bookId);
+        createRequest({ path:"api/v001/category?userid="+userId, method: "DELETE" }, {}, data)
+            .then(response => {
+                toggleClass(".delete", "loading");
+                console.log("Категория удалена", response);
+            })
+            .catch(() => {
+                toggleClass(".add-request", "loading");
+                console.log("Не удалось удалить");
+            });
     });
-});
+}
 
-const addBookForm = document.querySelector("#add-book");
-addBookForm.addEventListener("submit", event => {
-  event.preventDefault();
 
-  const data = getFieldData(event.target);
-  console.log("main", "data", data);
 
-  toggleClass(".add-book", "loading");
 
-  createRequest({ path: `/api/v001/books`, method: "POST" }, {}, data)
-    .then(response => {
-      toggleClass(".add-book", "loading");
-      console.log("Книга добавлена", response);
-    })
-    .catch(() => {
-      toggleClass(".add-book", "loading");
-      console.log("Не удалось добавить книгу");
-    });
-});
-*/
 const userSelector = document.querySelector('.select_control-user');
 userSelector.addEventListener('change', event => {
   userId = event.target.value;

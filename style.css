@@ -283,3 +283,12 @@ background: #D8E6F3;
 	padding-left: 4%;
 	width: 1200px;
 }
+
+td {
+    max-width: 400px;
+    word-wrap: break-word;
+}
+
+.bc {
+    color: black;
+}
