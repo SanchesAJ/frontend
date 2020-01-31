@@ -12,14 +12,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
-	<script></script>
+	<script type="text/javascript" src="/js/dev.js"></script>  
     <title>sitec</title>
 </head>
 
 <body>
-	<div class="example">
 	
-
+		<div class="example" id="body_container">
 		<div class="user-select">
 			<span class="select_label">Пользователь</span>
 			<select class="select_control select_control-user" name="userId">
@@ -31,17 +30,20 @@
 
 
 
-		<div id="pg-head">
+		<div id="pg-menu">
 			<form>
-				<input id="btn01" class="btn btn-primary" type="button" value="Статистика">
-				<input id="btn02" class="btn btn-primary" type="button" value="Редактирование">
-				<input id="btn03" class="btn btn-primary" type="button" value="Добавление">
-				<input id="btn04" class="btn btn-primary" type="button" value="Расход">
-				<input id="btn05" class="btn btn-primary" type="button" value="Удаление">
+				<input id="btn01" class="btn btn-outline-info aaa_button" type="button" value="Статистика">
+				<br>
+				<input id="btn02" class="btn btn-outline-info aaa_button" type="button" value="Редактирование">
+				<br>
+				<input id="btn03" class="btn btn-outline-info aaa_button" type="button" value="Добавление">
+				<br>
+				<input id="btn04" class="btn btn-outline-info aaa_button" type="button" value="Расход">
+				<br>
+				<input id="btn05" class="btn btn-outline-info aaa_button" type="button" value="Удаление">
 			</form>
 			
 		</div>
-		
 		
 		
 		<div class="content-container">
@@ -123,6 +125,8 @@
 			});  
 		</script> 
 		</div>
+		
+		</div>
 		<!--
 		
 		<div id="top_table" class="content-container">
@@ -187,7 +191,6 @@
 		</div>
 		
 		-->
-	</div>
 
 	<script src="/js/utils.js"></script>
 	<script src="/js/main.js"></script>

@@ -184,14 +184,6 @@ body {
     right: 20px;
 }
 
-.content-container {
-	background-color: white;
-	width: 40%;
-	margin: 30px;
-	border: 3px solid silver;
-	border-radius: 10px;
-	padding: 10px;
-}
 
 #test_abc{
 	float: right;
@@ -208,7 +200,6 @@ body {
 
 #top_table_head{
 	text-align: center;
-	
 }
 
 
@@ -221,15 +212,15 @@ body {
 }
 
 #main_table th, td:first-child {
-background: #AFCDE7;
-color: white;
-padding: 10px 20px;
+	background: #AFCDE7;
+	color: white;
+	padding: 10px 20px;
 }
 
 #main_table th, td {
-border-style: solid;
-border-width: 0 1px 1px 0;
-border-color: white;
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+	border-color: white;
 }
 
 #main_table td {
@@ -237,11 +228,6 @@ background: #D8E6F3;
 }
 
 #main_table th:first-child, td:first-child {
-	text-align: center;
-}
-
-#pg-head {
-	width: 100%;
 	text-align: center;
 }
 
@@ -269,4 +255,31 @@ background: #D8E6F3;
 	width: 40%;
 }
 
+#pg-menu {
+	padding: 10px;
+	float: left;
+}
 
+.content-container {
+	min-height: 390px;
+	background-color: white;
+	width: 700px;
+	margin-top: 20px;
+	border: 3px solid silver;
+	border-radius: 10px;
+	padding: 10px;
+	float: left;
+}
+
+.aaa_button {
+	width: 200px;
+	height: 70px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+#body_container {
+	padding-top: 4%;
+	padding-left: 4%;
+	width: 1200px;
+}

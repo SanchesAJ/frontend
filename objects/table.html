@@ -1,24 +1,7 @@
 <div class="div_head" id="top_table_head">ТАБЛИЦА</div>
-			<div class="Targets" id="Targets">
-				<table id="main_table">
-					
-				</table>
-			</div>
-
-<div class="comment">Пример получения списка</div>
-    <div class="Categories" id="Categories"></div>
-
-			<script>
-			
-			var arr = '<tr><th>Цель</th>'; arr+='<th>Лимит</th></tr>'
-			var i = 0;
-			while(data_[i])
-			{
-				var name = 'test';
-				arr+= '<tr><td>'+data_[i][1]+'</td>';
-				arr+= '<td>'+data_[i][2]+'</td><tr>';
-				i++;
-			}
-			
-			document.getElementById('main_table').innerHTML = arr;
-		</script>
+<script>getAllcategories();</script>
+<div class="Targets" id="Targets">
+	<table id="main_table">
+		<table class="Categories" id="Categories"></table>
+	</table>
+</div>

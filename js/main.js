@@ -1,5 +1,5 @@
 //попытка создать что-то адекватное (пример от кураторов ниже)
-var data_ = [[0, "a0", 0], [1, "a1", 0],[2, "a2", 0]];
+var data_ = [];
 /*
 const getData = function() {
   createRequest({ path: "/api/v001/books", method: "GET" })
@@ -94,17 +94,14 @@ deleteForm.addEventListener("submit", event => {
 */
 
 const renderBook = Category => `
-    <div class="Category">
-        <div class="Category_name">${Category.name}</div>
-        <div class="Category_limit">${Category.limit}</div>
-    </div>
+<tr>
+<td>${Category.name}</td> <td>${Category.limit}</td>
+</tr>
 `;
-
-
 const getAllcategories = function() {
   createRequest({ path: "api/v001/category?userid="+userId, method: "GET" })
     .then(response => {
-      document.querySelector("#Categories").innerHTML = response
+      document.querySelector("#Categories").innerHTML ='<tr><th>Категория</th><th>Лимит</th></tr>' + response
           .map(renderBook)
         .join("");
       console.log("Результат запроса ", response);
@@ -116,7 +113,7 @@ const getAllcategories = function() {
     });
 };
 
-getAllcategories();
+
 
 const bindAddFormListener = () => {
     const addBookForm = document.querySelector("#add-request");
